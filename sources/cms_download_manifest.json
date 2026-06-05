@@ -1,0 +1,223 @@
+{
+  "description": "CMS Internet-Only Manuals (IOMs) - Selected for Healthcare RAG Policy Navigator",
+  "last_updated": "2026-03-28",
+  "source_url": "https://www.cms.gov/medicare/regulations-guidance/manuals/internet-only-manuals-ioms",
+  "manuals": [
+    {
+      "manual_id": "100-02",
+      "manual_title": "Medicare Benefit Policy Manual",
+      "manual_description": "Core Medicare coverage rules covering Part A and Part B benefits including inpatient, home health, hospice, SNF, ambulance, and exclusions.",
+      "index_url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms012673",
+      "local_dir": "docs/cms_manuals/100-02_Medicare_Benefit_Policy",
+      "chapters": [
+        {
+          "chapter_num": 1,
+          "chapter_title": "Inpatient Hospital Services Covered Under Part A",
+          "relevance": "Patient eligibility and coverage for inpatient stays under Medicare Part A",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c01.pdf",
+          "local_filename": "chapter_01_inpatient_hospital_part_a.pdf"
+        },
+        {
+          "chapter_num": 2,
+          "chapter_title": "Inpatient Psychiatric Hospital Services",
+          "relevance": "Coverage rules for psychiatric inpatient care and lifetime day limits",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c02.pdf",
+          "local_filename": "chapter_02_inpatient_psychiatric.pdf"
+        },
+        {
+          "chapter_num": 3,
+          "chapter_title": "Duration of Covered Inpatient Services",
+          "relevance": "Benefit periods, spell of illness definitions, and inpatient day limits",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c03pdf.pdf",
+          "local_filename": "chapter_03_duration_inpatient.pdf"
+        },
+        {
+          "chapter_num": 4,
+          "chapter_title": "Inpatient Psychiatric Benefit Days Reduction and Lifetime Limitation",
+          "relevance": "190-day lifetime limit and reductions for psychiatric services",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c04.pdf",
+          "local_filename": "chapter_04_psychiatric_lifetime_limit.pdf"
+        },
+        {
+          "chapter_num": 5,
+          "chapter_title": "Lifetime Reserve Days",
+          "relevance": "60 lifetime reserve days usage rules and patient election",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c05.pdf",
+          "local_filename": "chapter_05_lifetime_reserve_days.pdf"
+        },
+        {
+          "chapter_num": 6,
+          "chapter_title": "Hospital Services Covered Under Part B",
+          "relevance": "Outpatient hospital services, ancillary services, and Part B coverage",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c06.pdf",
+          "local_filename": "chapter_06_hospital_services_part_b.pdf"
+        },
+        {
+          "chapter_num": 7,
+          "chapter_title": "Home Health Services",
+          "relevance": "Homebound status, skilled nursing, therapy, aide coverage criteria",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c07.pdf",
+          "local_filename": "chapter_07_home_health.pdf"
+        },
+        {
+          "chapter_num": 8,
+          "chapter_title": "Coverage of Extended Care (SNF) Services Under Hospital Insurance",
+          "relevance": "Skilled Nursing Facility eligibility, qualifying hospital stay, covered days",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c08pdf.pdf",
+          "local_filename": "chapter_08_snf_extended_care.pdf"
+        },
+        {
+          "chapter_num": 9,
+          "chapter_title": "Coverage of Hospice Services Under Hospital Insurance",
+          "relevance": "Hospice election, terminal prognosis requirements, covered services",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c09.pdf",
+          "local_filename": "chapter_09_hospice.pdf"
+        },
+        {
+          "chapter_num": 10,
+          "chapter_title": "Ambulance Services",
+          "relevance": "Medical necessity for ambulance transport, air vs ground, coverage criteria",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c10.pdf",
+          "local_filename": "chapter_10_ambulance.pdf"
+        },
+        {
+          "chapter_num": 11,
+          "chapter_title": "End Stage Renal Disease (ESRD)",
+          "relevance": "Dialysis coverage, transplant eligibility, Medicare entitlement for ESRD",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c11.pdf",
+          "local_filename": "chapter_11_esrd.pdf"
+        },
+        {
+          "chapter_num": 12,
+          "chapter_title": "Comprehensive Outpatient Rehabilitation Facility (CORF) Coverage",
+          "relevance": "Rehabilitation services, physical/occupational/speech therapy at CORF",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c12.pdf",
+          "local_filename": "chapter_12_corf_rehab.pdf"
+        },
+        {
+          "chapter_num": 13,
+          "chapter_title": "Rural Health Clinic (RHC) and Federally Qualified Health Center (FQHC) Services",
+          "relevance": "Coverage for rural patients and federally qualified health centers",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c13.pdf",
+          "local_filename": "chapter_13_rhc_fqhc.pdf"
+        },
+        {
+          "chapter_num": 14,
+          "chapter_title": "Medical Devices",
+          "relevance": "Durable medical equipment and device coverage criteria",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c14.pdf",
+          "local_filename": "chapter_14_medical_devices.pdf"
+        },
+        {
+          "chapter_num": 15,
+          "chapter_title": "Covered Medical and Other Health Services",
+          "relevance": "Broad list of Part B covered services: physician, preventive, lab, DME",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+          "local_filename": "chapter_15_covered_health_services.pdf"
+        },
+        {
+          "chapter_num": 16,
+          "chapter_title": "General Exclusions from Coverage",
+          "relevance": "Services NOT covered by Medicare — critical for patient eligibility queries",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c16.pdf",
+          "local_filename": "chapter_16_general_exclusions.pdf"
+        },
+        {
+          "chapter_num": 17,
+          "chapter_title": "Opioid Treatment Programs (OTPs)",
+          "relevance": "Medication-assisted treatment, methadone, buprenorphine coverage",
+          "url": "https://www.cms.gov/files/document/chapter-17-opioid-treatment-programs-otps.pdf",
+          "local_filename": "chapter_17_opioid_treatment.pdf"
+        }
+      ]
+    },
+    {
+      "manual_id": "100-03",
+      "manual_title": "Medicare National Coverage Determinations (NCD) Manual",
+      "manual_description": "Specific coverage decisions (yes/no) for individual medical procedures, devices, and treatments. Chapter 1 spans 4 parts covering sections 10 through 310.",
+      "index_url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms014961",
+      "local_dir": "docs/cms_manuals/100-03_National_Coverage_Determinations",
+      "chapters": [
+        {
+          "chapter_num": "1_part1",
+          "chapter_title": "Coverage Determinations - Part 1 (Sections 10-80.12)",
+          "relevance": "NCDs covering diagnostic tests, cardiovascular procedures, imaging",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/ncd103c1_part1.pdf",
+          "local_filename": "chapter_01_part1_sections_10_to_80.pdf"
+        },
+        {
+          "chapter_num": "1_part2",
+          "chapter_title": "Coverage Determinations - Part 2 (Sections 90-160.26)",
+          "relevance": "NCDs covering surgical procedures, durable medical equipment, prosthetics",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/ncd103c1_part2.pdf",
+          "local_filename": "chapter_01_part2_sections_90_to_160.pdf"
+        },
+        {
+          "chapter_num": "1_part3",
+          "chapter_title": "Coverage Determinations - Part 3 (Sections 170-190.34)",
+          "relevance": "NCDs covering preventive services, rehabilitation, end-of-life care",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/ncd103c1_part3.pdf",
+          "local_filename": "chapter_01_part3_sections_170_to_190.pdf"
+        },
+        {
+          "chapter_num": "1_part4",
+          "chapter_title": "Coverage Determinations - Part 4 (Sections 200-310.1)",
+          "relevance": "NCDs covering drugs, biologics, clinical trials, experimental treatments",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/ncd103c1_part4.pdf",
+          "local_filename": "chapter_01_part4_sections_200_to_310.pdf"
+        }
+      ]
+    },
+    {
+      "manual_id": "100-04",
+      "manual_title": "Medicare Claims Processing Manual",
+      "manual_description": "Operational rules for how Medicare claims are submitted, processed, and adjudicated. Useful for understanding billing requirements and patient cost-sharing.",
+      "index_url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/internet-only-manuals-ioms-items/cms018912",
+      "local_dir": "docs/cms_manuals/100-04_Medicare_Claims_Processing",
+      "chapters": [
+        {
+          "chapter_num": 1,
+          "chapter_title": "General Billing Requirements",
+          "relevance": "How claims are submitted, timely filing limits, assignment rules",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c01.pdf",
+          "local_filename": "chapter_01_general_billing.pdf"
+        },
+        {
+          "chapter_num": 2,
+          "chapter_title": "Admission and Registration Requirements",
+          "relevance": "Hospital admission procedures and Medicare coverage initiation",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c02.pdf",
+          "local_filename": "chapter_02_admission_registration.pdf"
+        },
+        {
+          "chapter_num": 3,
+          "chapter_title": "Inpatient Hospital Billing",
+          "relevance": "DRG billing, Part A cost-sharing, patient responsibility",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c03.pdf",
+          "local_filename": "chapter_03_inpatient_billing.pdf"
+        },
+        {
+          "chapter_num": 4,
+          "chapter_title": "Part B Hospital",
+          "relevance": "Outpatient hospital billing requirements and payment",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c04.pdf",
+          "local_filename": "chapter_04_part_b_hospital.pdf"
+        },
+        {
+          "chapter_num": 12,
+          "chapter_title": "Physicians and Nonphysician Practitioners",
+          "relevance": "Billing for physician services, NPPs, co-pays, deductibles",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c12.pdf",
+          "local_filename": "chapter_12_physicians_npp.pdf"
+        },
+        {
+          "chapter_num": 32,
+          "chapter_title": "Preventive and Screening Services",
+          "relevance": "Annual wellness visit, cancer screenings, vaccination billing",
+          "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c32.pdf",
+          "local_filename": "chapter_32_preventive_services.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-001",
+  "gender": "male",
+  "birthDate": "1955-03-15",
+  "name": [{"use": "official", "family": "Smith", "given": ["John"]}],
+  "address": [{"line": ["123 Main St"], "city": "Springfield", "state": "IL", "postalCode": "62701"}],
+  "telecom": [{"system": "phone", "value": "555-123-4567"}]
+}

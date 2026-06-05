@@ -1,0 +1,81 @@
+[
+  {
+    "type": "General Policy Query",
+    "input": {
+      "session_id": "gen_8891",
+      "query": "What are the first-line interventions for hypertension?",
+      "patient_context": null,
+      "retrieved_chunks": [
+        {
+          "chunk_id": "doc_01_sec_02",
+          "chunk_text": "Section 2: Treatment Approaches. First-line interventions include dietary changes such as the DASH diet, sodium reduction, regular aerobic exercise, and weight management. Pharmacological therapy is initiated when lifestyle changes are insufficient.",
+          "score": 0.8234,
+          "manual_id": "CLINICAL_GUIDELINES",
+          "chapter_title": "Cardiovascular Management",
+          "section_title": "Treatment Approaches",
+          "page_num": 14
+        }
+      ]
+    },
+    "expected_output": {
+       "answer": "According to the Clinical Guidelines, first-line interventions for hypertension include dietary modifications (like the DASH diet and sodium reduction), aerobic exercise, and weight management. Pharmacological options are typically reserved for when these lifestyle adjustments fall short.",
+       "citations": [
+         {
+           "manual": "CLINICAL_GUIDELINES",
+           "chapter": "Cardiovascular Management",
+           "section": "Treatment Approaches",
+           "page": 14
+         }
+       ],
+       "confidence": {
+         "level": "High",
+         "retrieval_score": 0.8234,
+         "reasoning": "The retrieved section directly addressed the exact query regarding first-line interventions."
+       },
+       "patient_context_used": false,
+       "session_id": "gen_8891"
+    }
+  },
+  {
+    "type": "Patient-Specific Query (Masked PHI)",
+    "input": {
+      "session_id": "fhir_mx_102",
+      "query": "Will Medicare cover home health skilled nursing for this patient?",
+      "patient_context": {
+        "status": "Active",
+        "conditions": ["Diabetes Type II", "Heart Failure"],
+        "coverage_type": "Medicare Part A",
+        "home_bound": true
+      },
+      "retrieved_chunks": [
+        {
+          "chunk_id": "100-02_ch7_s40",
+          "chunk_text": "Skilled nursing services are covered under Medicare Part A when the patient is certified as definitively homebound and requires intermittent skilled nursing care for an active medical condition.",
+          "score": 0.9102,
+          "manual_id": "100-02",
+          "chapter_title": "Home Health Services",
+          "section_title": "Covered Services",
+          "page_num": 42
+        }
+      ]
+    },
+    "expected_output": {
+       "answer": "Yes, based on the clinical context provided, the patient should qualify for coverage. Medicare Part A covers skilled nursing services given that the patient is certified as homebound and has active medical conditions (such as Diabetes Type II and Heart Failure) requiring intermittent skilled care.",
+       "citations": [
+         {
+           "manual": "100-02",
+           "chapter": "Home Health Services",
+           "section": "Covered Services",
+           "page": 42
+         }
+       ],
+       "confidence": {
+         "level": "High",
+         "retrieval_score": 0.9102,
+         "reasoning": "The retrieved policy directly corresponds to the criteria present in the patient's FHIR coverage summary."
+       },
+       "patient_context_used": true,
+       "session_id": "fhir_mx_102"
+    }
+  }
+]

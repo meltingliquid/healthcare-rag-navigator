@@ -1,0 +1,19 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "cov-001",
+        "subscriber": {"reference": "Patient/patient-001"},
+        "type": {
+          "coding": [{"system": "http://terminology.hl7.org/CodeSystem/v3-ActCode", "code": "SUBSIDIZ", "display": "subsidized health program"}],
+          "text": "Medicare Part A"
+        },
+        "status": "active",
+        "payor": [{"display": "Centers for Medicare & Medicaid Services"}]
+      }
+    }
+  ]
+}

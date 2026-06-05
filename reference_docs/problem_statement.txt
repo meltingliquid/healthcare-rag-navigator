@@ -1,0 +1,62 @@
+Project 2 – Healthcare RAG Policy Navigator
+Theme: Member Engagement
+
+Business Problem:
+Healthcare members ask complex coverage questions. Build a GenAI assistant that answers using policy documents.
+
+Datasets:
+FHIR Documentation: https://hl7.org/fhir/
+CMS Manuals: https://www.cms.gov/medicare/regulations-guidance/manuals
+
+Architecture:
+Documents → Chunking → Embeddings → Vector DB → RAG → LLM
+
+Day Wise Plan:
+
+Day 1 – Document Processing
+• Extract text from PDFs
+• Clean text
+• Chunk documents
+Deliverable: Document processing notebook
+
+Day 2 – Embeddings
+• Generate embeddings
+• Store in FAISS
+• Test similarity search
+Deliverable: Embedding notebook
+
+Day 3 – RAG Pipeline
+• Retriever
+• Context injection
+• LLM answering
+Deliverable: RAG notebook
+
+Day 4 – Prompt Engineering
+• Few shot prompts
+• Structured prompts
+• Improve accuracy
+Deliverable: Prompt testing notebook
+
+Day 5 – Evaluation
+• Confidence score
+• Multi query retrieval
+• Answer evaluation
+Deliverable: Evaluation notebook
+
+AI Components:
+Embeddings
+Vector search
+LLM reasoning
+
+Expected Outcomes:
+Healthcare AI assistant
+Policy search chatbot
+FHIR knowledge assistant
+
+GitHub Structure:
+project_rag_ai/
+ notebooks/
+ docs/
+ README.md
+
+

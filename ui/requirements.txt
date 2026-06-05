@@ -1,0 +1,16 @@
+# Databricks Apps requirements
+streamlit>=1.32.0
+python-dotenv
+openai
+boto3
+faiss-cpu
+rank-bm25
+langgraph
+langchain-core
+pydantic
+presidio-analyzer
+presidio-anonymizer
+fhirclient
+sentence-transformers
+tiktoken
+numpy

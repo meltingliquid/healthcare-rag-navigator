@@ -1,0 +1,183 @@
+﻿Ô£à Imports and Environment Setup OK
+Ô£à S3 Client Initialized
+­ƒöº Loading indexes and chunks from S3...
+Ô£à FAISS: 4669 vecs | BM25: 4669 docs | Chunks: 4669
+Ô£à Search helper functions defined
+Ô£à retrieve() function defined and ready
+
+=================================================================
+  [SEMANTIC]  "home health coverage"
+=================================================================
+  1. score=0.03227  chunk_id=100-02_ch7_s50.7.1_p101_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Impact on Care Provided in Excess of "Intermittent" or "Part-Time" Care (Rev. 208, Issued: 04-22-15,  (p.101)
+     exception is the osteoporosis drug, which is part of the home health benefit, and home health agenciÔÇª
+  2. score=0.03042  chunk_id=100-02_ch7_s10.9_p22_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Discharge Issues (Rev. 12382; Issued: 11-28-23; Effective: 01-01-24; Implementation:01-02-24) A. Hos  (p.22)
+     patientÔÇÖs current condition, to maintain the patientÔÇÖs current condition, to prevent or slow furtherÔÇª
+  3. score=0.02920  chunk_id=100-02_ch7_s50.7.1_p98_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Impact on Care Provided in Excess of "Intermittent" or "Part-Time" Care (Rev. 208, Issued: 04-22-15,  (p.98)
+     health spell of illness only applies to those beneficiaries who are enrolled in both Part A and PartÔÇª
+  4. score=0.02890  chunk_id=100-02_ch7_s10.9_p22_002
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Discharge Issues (Rev. 12382; Issued: 11-28-23; Effective: 01-01-24; Implementation:01-02-24) A. Hos  (p.22)
+     If the patient also meets the qualifying criteria for coverage of home health services, payment may ÔÇª
+  5. score=0.02837  chunk_id=100-02_ch7_s50.7.1_p95_002
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Impact on Care Provided in Excess of "Intermittent" or "Part-Time" Care (Rev. 208, Issued: 04-22-15,  (p.95)
+     60 - Special Conditions for Coverage of Home Health Services Under Hospital Insurance (Part A) and SÔÇª
+
+=================================================================
+  [KEYWORD]  "┬º40.1 HCPCS G0179"
+=================================================================
+  1. score=0.01639  chunk_id=100-04_ch32_s10_p106_002
+     100-04 ÔÇ║ Preventive and Screening Services ÔÇ║ CM diagnosis codes C82.01-C85.29, C85.81-C86.6, C96.4, and C96.Z-C96.9); Recurrent or refractory neu  (p.106)
+     ÔÇó ICD-10-CM diagnosis codes C90.00, C90.01, C90.02, C94.40, C94.41, C94.42, D47.1, D47.4, D75.81, D5ÔÇª
+  2. score=0.01639  chunk_id=100-02_ch7_s30.1.1_p41_002
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Patient Confined to the Home (Rev. 10438, Issued: 11-06-20, Effective: 03-01-20, Implementation: 01-  (p.41)
+     These claims are billed using HCPCS codes G0180 (certification) or G0179 (re-certification). The desÔÇª
+  3. score=0.01613  chunk_id=100-04_ch4_s260.5_p253_001
+     100-04 ÔÇ║ Part B Hospital ÔÇ║ Line Item Date of Service Reporting for Partial Hospitalization (Rev. 12423; Issued: 12-20-23; Effec  (p.253)
+     more). ***The definition of code G0177 is as follows: Training and educational services related to tÔÇª
+  4. score=0.01613  chunk_id=100-02_ch6_s10_p6_002
+     100-02 ÔÇ║ Hospital Services Covered Under Part B ÔÇ║ Medical and Other Health Services Furnished to Inpatients of Participating Hospitals (Rev. 182, Issu  (p.6)
+     Outpatient therapeutic services furnished at an entity that is wholly owned or wholly operated by thÔÇª
+  5. score=0.01587  chunk_id=100-02_ch13_s10_p68_002
+     100-02 ÔÇ║ Rural Health Clinic (RHC) and Federally Qualified Health Center (FQHC) Services ÔÇ║ RHC and FQHC General Information (Rev.239, Issued: 01-09-18, Effective: 1-22-18, Implementation: 1-2  (p.68)
+     A claim should not contain both G0071 and the corresponding CPT/HCPCS codes. Only the individual CPTÔÇª
+
+=================================================================
+  [MIXED]  "home health ┬º40.1 coverage requirements"
+=================================================================
+  1. score=0.03279  chunk_id=100-02_ch7_s10.9_p23_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Discharge Issues (Rev. 12382; Issued: 11-28-23; Effective: 01-01-24; Implementation:01-02-24) A. Hos  (p.23)
+     skills of a licensed nurse (as defined in ┬º40.1) and therefore has no impact on the beneficiary's elÔÇª
+  2. score=0.03031  chunk_id=100-02_ch7_s50.7.1_p101_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Impact on Care Provided in Excess of "Intermittent" or "Part-Time" Care (Rev. 208, Issued: 04-22-15,  (p.101)
+     exception is the osteoporosis drug, which is part of the home health benefit, and home health agenciÔÇª
+  3. score=0.02967  chunk_id=100-02_ch7_s30.1.1_p34_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Patient Confined to the Home (Rev. 10438, Issued: 11-06-20, Effective: 03-01-20, Implementation: 01-  (p.34)
+     NOTE: Dependent services provided after the final qualifying skilled service are not covered under tÔÇª
+  4. score=0.02869  chunk_id=100-02_ch7_s0_p1_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ General  (p.1)
+     Chapter 7 - Home Health Services Table of Contents (Rev. 12382; Issued: 11-28-23) (Rev. 12425 IssuedÔÇª
+  5. score=0.02844  chunk_id=100-02_ch7_s50.7.1_p98_001
+     100-02 ÔÇ║ Home Health Services ÔÇ║ Impact on Care Provided in Excess of "Intermittent" or "Part-Time" Care (Rev. 208, Issued: 04-22-15,  (p.98)
+     health spell of illness only applies to those beneficiaries who are enrolled in both Part A and PartÔÇª
+
+Ô£à All 3 query type tests complete
+Ô£à Retrieval module loaded
+Ô£à MVP pipeline compiled
+
+============================================================
+  Query A (NCD Test)
+  Query: Patient ID 131597951. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: <MEDICAL_RECORD_NUMBER>
+  ­ƒÅÑ Fetching FHIR data for patient: <MEDICAL_RECORD_NUMBER>
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 Diabetes', 'Hypertension'], 'medications': ['Metformin 500mg', 'Lisinopril 10mg'], 'coverage_type': 'Medicare Part A', 'age_range': '70-75', 'source': 'offline_cache', 'serv...
+  ­ƒôï FHIR summary appended to query
+  ÔåÆ [summarise_fhir]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+
+Patient Context (masked)...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retriev...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retriev...
+
+  Answer:     The provided policy documents do not contain enough information to answer this query.
+  Citations:  []
+  Confidence: {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retrieved context does not provide specific information about the requirements for Medicare coverage of continuous glucose monitors.'}
+  Patient ctx used: True
+  Request ID: 62bca04b-f5b4-4a2d-b543-c764f970e2a6
+
+============================================================
+  Query B (Benefit Policy)
+  Query: Patient ID 131597951. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: <MEDICAL_RECORD_NUMBER>
+  ­ƒÅÑ Fetching FHIR data for patient: <MEDICAL_RECORD_NUMBER>
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 Diabetes', 'Hypertension'], 'medications': ['Metformin 500mg', 'Lisinopril 10mg'], 'coverage_type': 'Medicare Part A', 'age_range': '70-75', 'source': 'offline_cache', 'serv...
+  ­ƒôï FHIR summary appended to query
+  ÔåÆ [summarise_fhir]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+
+Patient Context (masked):
+The patie...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare Part B. Medicare covers DSMT services when they are furnished by a certified prov...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare Part B. Medicare covers DSMT services when they are furnished by a certified prov...
+
+  Answer:     Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare Part B. Medicare covers DSMT services when they are furnished by a certified provider who meets certain quality standards. The training is intended to educate beneficiaries in the successful self-
+  Citations:  [{'manual': '100-02', 'chapter': 'Covered Medical and Other Health Services', 'section': 'Diabetes Self-Management Training Services', 'page': 259}, {'manual': '100-02', 'chapter': 'Covered Medical and Other Health Services', 'section': 'Beneficiaries Eligible for Coverage and Definition of Diabetes', 'page': 260}]
+  Confidence: {'level': 'High', 'retrieval_score': 0.95, 'reasoning': 'The context provides clear and specific information about the coverage of DSMT services under Medicare Part B, including the requirements for certification and documentation.'}
+  Patient ctx used: True
+  Request ID: afcdc54b-7762-4ea9-872b-3afe091eae5c
+
+============================================================
+  Query C (Billing/Claims)
+  Query: Patient ID 131597951. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: <MEDICAL_RECORD_NUMBER>
+  ­ƒÅÑ Fetching FHIR data for patient: <MEDICAL_RECORD_NUMBER>
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 Diabetes', 'Hypertension'], 'medications': ['Metformin 500mg', 'Lisinopril 10mg'], 'coverage_type': 'Medicare Part A', 'age_range': '70-75', 'source': 'offline_cache', 'serv...
+  ­ƒôï FHIR summary appended to query
+  ÔåÆ [summarise_fhir]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+
+Patient Context (masked):
+The patient has...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'For billing Medicare for a diabetic foot exam, particularly when addressing diabetic sensory neuropathy with loss of protective sensation (LOPS), the clinic should use the appropriate d...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'For billing Medicare for a diabetic foot exam, particularly when addressing diabetic sensory neuropathy with loss of protective sensation (LOPS), the clinic should use the appropriate d...
+
+  Answer:     For billing Medicare for a diabetic foot exam, particularly when addressing diabetic sensory neuropathy with loss of protective sensation (LOPS), the clinic should use the appropriate diagnosis codes related to diabetic neuropathy. The specific modifier code G0247 is used for routine foot care for p
+  Citations:  [{'manual': '100-04', 'chapter': 'Preventive and Screening Services', 'section': 'Billing of the Diagnosis and Treatment of Peripheral Neuropathy with Loss of Protective Sensation in', 'page': 78}]
+  Confidence: {'level': 'High', 'retrieval_score': 0.9, 'reasoning': 'The context provides specific billing codes and guidelines for diabetic foot care related to neuropathy, which directly addresses the query.'}
+  Patient ctx used: True
+  Request ID: 6a93ac6a-1acd-465b-b2a2-2ba336810059

@@ -1,0 +1,114 @@
+Recommended approach: Two Databricks Jobs
+Job A runs your full pipeline once (data engineering → indexes → retrieval setup). Job B runs 07_query_pipeline.py independently any time. This is far better than manually running notebooks one by one.
+
+Step-by-step implementation guide
+Step 1 — Set up your Databricks workspace
+First, upload your project to DBFS or a Git-linked repo. The Git repo approach is strongly recommended:
+In your Databricks workspace, go to Repos → Add Repo and paste your GitHub/GitLab repo URL. This makes all your files available at a path like /Repos/your-email/your-project/. Your folder structure should look like:
+your-project/
+├── config/settings.py
+├── api/
+│   ├── input_sanitizer.py
+│   ├── phi_masker.py
+│   ├── fhir_client.py
+│   ├── audit_logger.py
+│   └── query_classifier.py
+├── retrieval/
+│   ├── 01_embed_chunks.py
+│   ├── 02_build_faiss_index.py
+│   ├── 03_build_bm25_index.py
+│   ├── 04_hybrid_retriever.py
+│   ├── 05_reranker.py
+│   └── prompts/system_prompt.txt
+├── notebooks/
+│   ├── DataEngineeringDay1.py
+│   ├── DataEngineeringDay2.py
+│   ├── DataEngineeringDay3.py
+│   └── 07_query_pipeline.py
+└── sources/cms_download_manifest.json
+Step 2 — Store secrets in Databricks Secret Scope
+Your code already uses dbutils.secrets.get(scope="capstone_scope", ...). Set this up with the Databricks CLI:
+bashdatabricks secrets create-scope --scope capstone_scope
+databricks secrets put --scope capstone_scope --key aws_access_key
+databricks secrets put --scope capstone_scope --key aws_secret_key
+databricks secrets put --scope capstone_scope --key openai_api_key
+```
+
+Then update your notebooks to also fetch the OpenAI key the same way — replace `os.getenv("OPENAI_API_KEY")` with `dbutils.secrets.get(scope="capstone_scope", key="openai_api_key")` inside the Databricks environment check.
+
+### Step 3 — Create a shared cluster (or use serverless)
+
+Go to **Compute → Create Compute**. For this pipeline, a single-node cluster works fine (no distributed Spark needed):
+
+- Runtime: **14.x LTS ML** (includes many ML libraries pre-installed)
+- Node type: `i3.xlarge` or `m5.xlarge` (cost-effective)
+- Enable **"Terminate after X minutes of inactivity"**
+
+For the reranker task specifically, you may want a GPU cluster (`g4dn.xlarge`) since `cross-encoder/ms-marco-MiniLM-L-6-v2` runs faster on GPU, but CPU works fine too.
+
+### Step 4 — Create Job A (Full Pipeline)
+
+Go to **Workflows → Create Job**. Name it `Full RAG Pipeline`.
+
+Add tasks in this order:
+
+**Task 1 — download_pdfs**
+- Type: `Python script`
+- Source: Git repo
+- Path: `notebooks/DataEngineeringDay1.py`
+- Cluster: your shared cluster
+- No dependencies
+
+**Task 2 — extract_clean_text**
+- Type: `Python script`
+- Path: `notebooks/DataEngineeringDay2.py`
+- Depends on: `download_pdfs`
+
+**Task 3 — chunk_text**
+- Type: `Python script`
+- Path: `notebooks/DataEngineeringDay3.py`
+- Depends on: `extract_clean_text`
+
+**Task 4 — embed_chunks**
+- Type: `Python script`
+- Path: `retrieval/01_embed_chunks.py`
+- Depends on: `chunk_text`
+
+**Task 5a — build_faiss_index** and **Task 5b — build_bm25_index**
+- Both depend on `embed_chunks`, but they depend on each other — Databricks will run them in parallel automatically when you set both to depend only on `embed_chunks`
+
+**Task 6 — hybrid_retriever**
+- Depends on: `build_faiss_index` AND `build_bm25_index` (both must complete)
+
+**Task 7 — reranker**
+- Depends on: `hybrid_retriever`
+
+For each task, under **Advanced → Libraries**, add:
+```
+boto3, python-dotenv, openai, numpy, faiss-cpu, rank_bm25, sentence-transformers, tiktoken, pymupdf, langgraph
+Step 5 — Create Job B (Query Pipeline only)
+Create a second job named Query Pipeline. Add a single task:
+
+Type: Python script
+Path: notebooks/07_query_pipeline.py
+Cluster: same shared cluster
+Libraries: boto3, openai, faiss-cpu, rank_bm25, sentence-transformers, langgraph, presidio-analyzer, presidio-anonymizer
+
+This job assumes the S3 indexes already exist (built by Job A). Run it any time you want to process queries.
+Step 6 — Add job parameters (optional but useful)
+In Job B, you can pass a query as a parameter so you don't need to edit code:
+python# At the top of 07_query_pipeline.py, add:
+import sys
+if "DATABRICKS_RUNTIME_VERSION" in os.environ:
+    query_input = dbutils.widgets.get("query") if dbutils.widgets.getAll() else None
+Then in the job definition, add a widget parameter query with a default value.
+Step 7 — Running and monitoring
+For Job A, click Run Now once to build all your indexes. This is a one-time setup (or re-run whenever your source data changes).
+For Job B, click Run Now or trigger via the REST API:
+bashcurl -X POST https://<your-workspace>.azuredatabricks.net/api/2.1/jobs/runs/submit \
+  -H "Authorization: Bearer <token>" \
+  -d '{"job_id": <job_b_id>, "notebook_params": {"query": "home health coverage"}}'
+You can monitor both jobs under Workflows → Job Runs, where you'll see task-level success/failure, logs, and timing for each stage.
+
+Summary of the recommendation
+Use Databricks Workflows with two jobs. You never need to manually open and run files one by one. Job A is your build pipeline (run once or on a schedule when source data updates), and Job B is your query pipeline (run on demand or via API). The S3 bucket is the shared state layer between the two jobs — Job A writes indexes to S3, Job B reads from them

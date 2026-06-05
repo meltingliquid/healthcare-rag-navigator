@@ -1,0 +1,14 @@
+command:
+  - "streamlit"
+  - "run"
+  - "ui/pipeline_dashboard.py"
+  - "--server.port"
+  - "8000"
+  - "--theme.base=dark"
+env:
+  - name: OPENAI_API_KEY
+    valueFrom: OPENAI_API_KEY
+  - name: AWS_ACCESS_KEY_ID
+    valueFrom: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+    valueFrom: AWS_SECRET_ACCESS_KEY

@@ -1,0 +1,145 @@
+﻿Ô£à Imports and Environment Setup OK
+Ô£à S3 Client Initialized
+­ƒöº Loading indexes and chunks from S3...
+Ô£à FAISS: 4669 vecs | BM25: 4669 docs | Chunks: 4669
+Ô£à Search helper functions defined
+Ô£à retrieve() function defined and ready
+Ô£à Retrieval module loaded
+Ô£à Imports and Environment Setup OK
+ÔÅ│ Loading reranker model: cross-encoder/ms-marco-MiniLM-L-6-v2...
+Ô£à Model loaded successfully.
+Ô£à rerank() function defined and ready
+Ô£à Reranker module loaded
+Ô£à MVP pipeline compiled
+
+============================================================
+  Query A (NCD Test)
+  Query: Patient ID 131597951. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My doctor wants me to get a continuous glucose monitor for my diabetes. What are the exact requirements for my insurance to pay for it?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: 131597951
+  ­ƒÅÑ Fetching FHIR data for patient: 131597951
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok'}
+  ­ƒôï FHIR summary generated
+  ÔåÆ [summarise_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok', 'summary': 'The patient h...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒÜÇ Reranking chunks...
+     Reranked top 5 chunks
+  ÔåÆ [rerank]
+      [DEBUG] retrieved_chunks: 5 chunks
+  Ô£ô Checking chunk relevance...
+     Relevance: YES
+  ÔåÆ [check]
+      [DEBUG] chunks_relevant: True
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retriev...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retriev...
+
+  Answer:     The provided policy documents do not contain enough information to answer this query.
+  Citations:  []
+  Confidence: {'level': 'Low', 'retrieval_score': 0.9, 'reasoning': 'The retrieved context does not specifically address the requirements for Medicare coverage of continuous glucose monitors.'}
+  Patient ctx used: True
+  Request ID: b18e49c7-0fdc-4ee6-acd3-235653b816b2
+
+============================================================
+  Query B (Benefit Policy)
+  Query: Patient ID 131597951. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. I want to take a diabetes self-management training class at a local clinic. Is that considered a covered outpatient service?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: 131597951
+  ­ƒÅÑ Fetching FHIR data for patient: 131597951
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok'}
+  ­ƒôï FHIR summary generated
+  ÔåÆ [summarise_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok', 'summary': 'The patient h...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒÜÇ Reranking chunks...
+     Reranked top 5 chunks
+  ÔåÆ [rerank]
+      [DEBUG] retrieved_chunks: 5 chunks
+  Ô£ô Checking chunk relevance...
+     Relevance: YES
+  ÔåÆ [check]
+      [DEBUG] chunks_relevant: True
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare. According to the Balanced Budget Act of 1997, Medicare covers DSMT services when...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare. According to the Balanced Budget Act of 1997, Medicare covers DSMT services when...
+
+  Answer:     Yes, diabetes self-management training (DSMT) is considered a covered outpatient service under Medicare. According to the Balanced Budget Act of 1997, Medicare covers DSMT services when provided by a certified provider who meets certain quality standards. The training is intended to educate benefici
+  Citations:  [{'manual': '100-02', 'chapter': 'Covered Medical and Other Health Services', 'section': 'Diabetes Self-Management Training Services', 'page': 259}, {'manual': '100-02', 'chapter': 'Covered Medical and Other Health Services', 'section': 'Beneficiaries Eligible for Coverage and Definition of Diabetes', 'page': 260}]
+  Confidence: {'level': 'High', 'retrieval_score': 0.9, 'reasoning': 'The context clearly outlines the conditions under which DSMT is covered by Medicare, including certification requirements and the need for a documented plan of care.'}
+  Patient ctx used: True
+  Request ID: fd8c8ce3-6477-4f31-941d-316d4ff3e053
+
+============================================================
+  Query C (Billing/Claims)
+  Query: Patient ID 131597951. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+============================================================
+  ÔåÆ [sanitize]
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597951. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+      [DEBUG] error: 
+  ÔåÆ [mask_phi]
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. My clinic says they aren't sure how to bill Medicare for my diabetic foot exam. Do they need a specific modifier code?
+      [DEBUG] deanon_map: {...} (1 keys)
+  ÔåÆ [classify]
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: 131597951
+  ­ƒÅÑ Fetching FHIR data for patient: 131597951
+  ÔåÆ [fetch_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok'}
+  ­ƒôï FHIR summary generated
+  ÔåÆ [summarise_fhir]
+      [DEBUG] patient_context: {'conditions': ['Type 2 diabetes mellitus'], 'medications': ['Metformin'], 'coverage_type': 'Medicare', 'age_range': '25-30', 'source': 'live_fhir', 'server_status': 'ok', 'summary': 'The patient h...
+  ­ƒöì Retrieving...
+     Retrieved 5 chunks
+  ÔåÆ [retrieve]
+      [DEBUG] retrieved_chunks: 5 chunks
+  ­ƒÜÇ Reranking chunks...
+     Reranked top 5 chunks
+  ÔåÆ [rerank]
+      [DEBUG] retrieved_chunks: 5 chunks
+  Ô£ô Checking chunk relevance...
+     Relevance: YES
+  ÔåÆ [check]
+      [DEBUG] chunks_relevant: True
+  ­ƒôØ Generating answer...
+  ÔåÆ [generate]
+      [DEBUG] final_response: {'answer': 'For billing Medicare for a diabetic foot exam, specific HCPCS codes should be used. If the patient has diabetic sensory neuropathy resulting in a loss of protective sensation (LOPS), th...
+  ÔåÆ [log]
+      [DEBUG] final_response: {'answer': 'For billing Medicare for a diabetic foot exam, specific HCPCS codes should be used. If the patient has diabetic sensory neuropathy resulting in a loss of protective sensation (LOPS), th...
+
+  Answer:     For billing Medicare for a diabetic foot exam, specific HCPCS codes should be used. If the patient has diabetic sensory neuropathy resulting in a loss of protective sensation (LOPS), the following codes are applicable: G0245 for the initial foot exam, G0246 for follow-up evaluations, and G0247 for r
+  Citations:  [{'manual': '100-04', 'chapter': 'Preventive and Screening Services', 'section': 'Billing of the Diagnosis and Treatment of Peripheral Neuropathy with Loss of Protective Sensation in', 'page': 77}, {'manual': '100-04', 'chapter': 'Preventive and Screening Services', 'section': 'Billing of the Diagnosis and Treatment of Peripheral Neuropathy with Loss of Protective Sensation in', 'page': 78}]
+  Confidence: {'level': 'High', 'retrieval_score': 0.9, 'reasoning': 'The context provides specific billing codes and conditions for diabetic foot exams, directly addressing the query.'}
+  Patient ctx used: True
+  Request ID: a0f1521f-bd27-4b0a-9a32-3b9c6ccd76b4

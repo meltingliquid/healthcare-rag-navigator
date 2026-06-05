@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    "Hypertension"
+  ],
+  "medications": [],
+  "coverage_type": "Medicare",
+  "age_range": "30-35",
+  "source": "live_fhir",
+  "server_status": "ok"
+}

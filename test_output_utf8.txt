@@ -1,0 +1,126 @@
+﻿Ô£à Core API modules loaded
+Ô£à Imports and Environment Setup OK
+Ô£à S3 Client Initialized
+­ƒöº Loading indexes and chunks from S3...
+Ô£à FAISS: 4669 vecs | BM25: 4669 docs | Chunks: 4669
+Ô£à Search helper functions defined
+Ô£à retrieve() function defined and ready
+Ô£à Imports and Environment Setup OK
+ÔÅ│ Loading reranker model: cross-encoder/ms-marco-MiniLM-L-6-v2...
+Ô£à Model loaded successfully.
+Ô£à rerank() function defined and ready
+Ô£à Member B retrieval modules loaded (hybrid retriever + reranker)
+Ô£à OpenAI client and system prompt loaded
+Ô£à All pipeline nodes defined
+Ô£à LangGraph compiled successfully
+Ô£à run_query() helper ready
+
+============================================================
+  TEST: F-05 (Patient 131597949 - General check)
+  QUERY: 'Patient ID is 131597949. Are there any particular Medicare coverage policies I should be aware of for them?'
+============================================================
+
+  ÔåÆ Node 'sanitize' executed
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID is 131597949. Are there any particular Medicare coverage policies I should be aware of for them?
+      [DEBUG] error: 
+
+  ÔåÆ Node 'mask_phi' executed
+      [DEBUG] query: Patient ID is <MEDICAL_RECORD_NUMBER>. Are there any particular Medicare coverage policies I should be aware of for them?
+      [DEBUG] deanon_map: {'<MEDICAL_RECORD_NUMBER>': '131597949'}
+
+  ÔåÆ Node 'classify' executed
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: 
+      [DEBUG] identifier_type: none
+      [DEBUG] classifier_confidence: 0.99
+      [DEBUG] needs_identifier: True
+
+  ÔåÆ Node 'fetch_fhir' executed
+      [DEBUG] patient_context: {'conditions': ['Diabetes mellitus', 'Unilateral primary osteoarthritis, right knee', 'Pain in right knee', 'Hipertensi├│n esencial', 'Hipercolesterolemia', 'Sinusitis aguda', 'accidente de nave espacial en vuelo (evento)', 'Test condition 6946755', 'asthma', 'diabetes', 'hypertension', 'depression', 'neuropathic pain', 'rheumatoid arthritis - both hands', 'rheumatoid arthritis - left elbow', 'GERD', 'high cholesterol', 'onychomycosis', 'angina', 'a'], 'medications': ['Metformin 500 MG', 'yty', 'asd', 'Atorvastatin', 'Metoprolol', 'Insulin glargine', 'Amoxicillin 120 MG/ML / clavulanate potassium 8.58 MG/ML Oral Suspension', 'Amlodipine 5 mg tablet', 'Metoprolol', 'Amoxicillin 250mg', 'Amoxicillin 500mg', 'Caffeine Citrate', 'Ibuprofen 100mg/5mL oral suspension', 'Azithromycin 200mg/5mL oral suspension'], 'coverage_type': 'health insurance plan policy', 'age_range': 'Unknown', 'source': 'live_fhir', 'server_status': 'ok'}
+  ­ƒöì Executing Hybrid Retrieve...
+     Retrieved 15 candidates
+
+  ÔåÆ Node 'retrieve' executed
+      [DEBUG] retrieved_chunks: 15 chunks
+  ­ƒÅå Executing Reranker...
+     Reranked to top-5
+     Injected patient context into context.
+
+  ÔåÆ Node 'rerank' executed
+      [DEBUG] reranked_chunks: 6 chunks
+  Ô£ô Checking chunk relevance...
+     Relevance: YES
+
+  ÔåÆ Node 'check' executed
+      [DEBUG] chunks_relevant: True
+  ­ƒôØ Generating answer (GPT-4o)...
+
+  ÔåÆ Node 'generate' executed
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': "The context provided does not include specific Medicare coverage policies related to the patient's conditions or treatments."}, 'patient_context_used': True, 'session_id': 'dcf78d15-4afb-4bc2-8b50-e11ac7f83859'}
+
+  ÔåÆ Node 'cite' executed
+  ­ƒôï Logging interaction...
+
+  ÔåÆ Node 'log' executed
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': "The context provided does not include specific Medicare coverage policies related to the patient's conditions or treatments."}, 'patient_context_used': True, 'session_id': 'dcf78d15-4afb-4bc2-8b50-e11ac7f83859', 'request_id': 'c2773b41-5aa6-4302-9c81-9cfd12d57414'}
+
+  ­ƒôä Answer: The provided policy documents do not contain enough information to answer this query....
+  ­ƒôÜ Citations: []
+  ­ƒÄ» Confidence: {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': "The context provided does not include specific Medicare coverage policies related to the patient's conditions or treatments."}
+  ­ƒÅÑ Patient Context Used: True
+
+============================================================
+  TEST: F-05 (Patient 131597949 - Condition specific)
+  QUERY: 'Patient ID 131597949. Is Hypertension management covered?'
+============================================================
+
+  ÔåÆ Node 'sanitize' executed
+      [DEBUG] is_injection: False
+      [DEBUG] query: Patient ID 131597949. Is Hypertension management covered?
+      [DEBUG] error: 
+
+  ÔåÆ Node 'mask_phi' executed
+      [DEBUG] query: Patient ID <MEDICAL_RECORD_NUMBER>. Is Hypertension management covered?
+      [DEBUG] deanon_map: {'<MEDICAL_RECORD_NUMBER>': '131597949'}
+
+  ÔåÆ Node 'classify' executed
+      [DEBUG] query_type: patient_specific
+      [DEBUG] patient_id: example
+      [DEBUG] identifier_type: patient_id
+      [DEBUG] classifier_confidence: 0.99
+      [DEBUG] needs_identifier: False
+
+  ÔåÆ Node 'fetch_fhir' executed
+      [DEBUG] patient_context: {'conditions': ['Hypertension'], 'medications': ['Amoxicillin 500mg'], 'coverage_type': 'Unknown', 'age_range': 'Unknown', 'source': 'live_fhir', 'server_status': 'ok'}
+  ­ƒöì Executing Hybrid Retrieve...
+     Retrieved 15 candidates
+
+  ÔåÆ Node 'retrieve' executed
+      [DEBUG] retrieved_chunks: 15 chunks
+  ­ƒÅå Executing Reranker...
+     Reranked to top-5
+     Injected patient context into context.
+
+  ÔåÆ Node 'rerank' executed
+      [DEBUG] reranked_chunks: 6 chunks
+  Ô£ô Checking chunk relevance...
+     Relevance: YES
+
+  ÔåÆ Node 'check' executed
+      [DEBUG] chunks_relevant: True
+  ­ƒôØ Generating answer (GPT-4o)...
+
+  ÔåÆ Node 'generate' executed
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': 'The retrieval context did not include specific information about coverage for hypertension management, only general references to hypertension in other contexts.'}, 'patient_context_used': True, 'session_id': 'b37cfc7b-304e-4116-95c9-cf2e61b61f9d'}
+
+  ÔåÆ Node 'cite' executed
+  ­ƒôï Logging interaction...
+
+  ÔåÆ Node 'log' executed
+      [DEBUG] final_response: {'answer': 'The provided policy documents do not contain enough information to answer this query.', 'citations': [], 'confidence': {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': 'The retrieval context did not include specific information about coverage for hypertension management, only general references to hypertension in other contexts.'}, 'patient_context_used': True, 'session_id': 'b37cfc7b-304e-4116-95c9-cf2e61b61f9d', 'request_id': '6b14e333-340c-467a-b3a7-8fab6381d01f'}
+
+  ­ƒôä Answer: The provided policy documents do not contain enough information to answer this query....
+  ­ƒôÜ Citations: []
+  ­ƒÄ» Confidence: {'level': 'Low', 'retrieval_score': 1.0, 'reasoning': 'The retrieval context did not include specific information about coverage for hypertension management, only general references to hypertension in other contexts.'}
+  ­ƒÅÑ Patient Context Used: True
